@@ -1,0 +1,17 @@
+
+<body>
+  <h1><%= @name.capitalize %> Profile </h1>
+  <p>
+    E-mail: <%= @email %>
+  </p>
+  <p>
+    Interests: <%= get_interests(@name).join(', ') %>
+  </p>
+  <ul>
+    <% @users.each do |user| %>
+      <% if user != @name %>
+        <li><a href="/user/<%= user %>"><%= user %></a></li>
+      <% end %>
+    <% end %>
+  </ul>
+</body>
